@@ -1,0 +1,23 @@
+# Synthetic example only. Real manifests and documents belong in .local/.
+schema_version: 1
+source_root: /absolute/path/to/private-sources
+path_base: manifest_directory
+retrieval_policy: Only prepared entries with a non-null path; never source_root or evaluation/
+documents:
+  - id: sample-guide
+    source_path: sample-guide.md
+    title: 示範知識指南
+    source_type: markdown
+    path: retrieval/sample-guide.md
+    language: null
+    category: null
+    source_url: null
+    organization: null
+    published_at: null
+    license: review_required
+    visibility: private
+    ingestion_status: prepared
+    evaluation_path: evaluation/faq/sample-guide.md
+    evaluation_status: needs_human_review
+    faq_line_ranges: [[8, 12]]
+    faq_question_markers: 1

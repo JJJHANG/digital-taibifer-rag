@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "digital-taibifer-rag"
+version = "0.1.0"
+description = "Knowledge retrieval backend for Digital TaiBIFer"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115,<1.0",
+    "pydantic>=2.9,<3.0",
+    "uvicorn>=0.34,<1.0",
+    "sqlalchemy[asyncio]>=2.0,<2.1",
+    "alembic>=1.14,<2.0",
+    "psycopg[binary]>=3.2,<4.0",
+    "pgvector>=0.3,<1.0",
+    "pydantic-settings>=2.7,<3.0",
+    "pyyaml>=6.0,<7.0",
+    "markdown-it-py>=3.0,<5.0",
+    "pypdf[fonts]>=5.0,<7.0",
+    "langchain-text-splitters>=1.0,<2.0",
+    "openai>=2.0,<3.0",
+    "tiktoken>=0.9,<1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.setuptools.package-data]
+"app.rag" = ["templates/*.md"]
